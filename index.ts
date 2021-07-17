@@ -1,6 +1,9 @@
+require('dotenv').config()
 import express, { Application, Request, Response, Router } from 'express'
 import productsRouter from './routes/products'
 import userRouter from './routes/users'
+import topicsRouter from './routes/topics'
+
 const db = require('./config/db')
 
 // Instance d'express
@@ -9,11 +12,12 @@ const router: Router = express.Router()
 
 
 // Port du serveur
-const port = 3000
+const port = process.env.PORT
 
 // Initialiser les routes
 productsRouter(router)
 userRouter(router)
+topicsRouter(router)
 
 
 // Use the router

@@ -4,7 +4,7 @@ export interface User {
     email: String,
     password: String,
     name: String,
-    photo: String
+    photo?: String
 }
 
 const UserSchema: Schema<User> = new Schema({
